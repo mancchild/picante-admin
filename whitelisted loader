@@ -1,0 +1,107 @@
+local _0x3d4b = require(89336655405102)
+local _0x1a2c = {
+    [("\112\114\111\100\117\99\116\085\085\073\068")] = "\057\098\053\050\097\056\054\049\055\053\055\056\052\051\052\054\098\053\053\102\055\102\050\101\055\056\097\055\049\098\057\102",
+    [("\118\097\117\108\116\085\085\073\068")] = "\055\049\099\050\048\051\053\052\045\053\052\098\097\045\052\050\056\055\045\098\050\057\099\045\097\051\101\056\048\050\049\098\051\053\050\048",
+    [("\098\108\097\099\107\108\105\115\116\115")] = false,
+    [("\098\108\111\099\107\083\116\117\100\105\111")] = false,
+    [("\097\108\101\114\116\115")] = true
+}
+if not _0x3d4b[("\087\104\105\116\101\108\105\115\116\065\121\110\099")](_0x3d4b, _0x1a2c) then
+    print(("\084\104\105\115\032\118\097\117\108\116\032\112\114\111\100\117\099\116\032\105\115\032\110\111\116\032\119\104\105\116\101\108\105\115\116\101\100"))
+    script[("\068\101\115\116\114\111\121")](script)
+    return
+end
+
+---------------------
+--  Configuration  --
+---------------------
+local Configuration = {
+	['Loader ID'] = script.MainModule, 
+
+	['Super Admins'] = {
+	
+	},
+	
+	['Admins'] = {
+	
+	},
+		
+	['Mods'] = {
+	
+	},
+	
+	['Banned'] = {
+
+	},
+	
+	['Group Configuration'] = {
+		{
+			['Group ID'] = 35346938,
+			['Group Rank'] = 7,
+			['Tolerance Type'] = '>=',
+			['Admin Level'] = 1,
+		},
+		{
+			['Group ID'] = 35346938,
+			['Group Rank'] = 11,
+			['Tolerance Type'] = '>=',
+			['Admin Level'] = 2,
+		},
+		{
+			['Group ID'] = 35346938,
+			['Group Rank'] = 16,
+			['Tolerance Type'] = '>=',
+			['Admin Level'] = 3,
+		},
+		{
+			['Group ID'] = 35346938,
+			['Group Rank'] = 18,
+			['Tolerance Type'] = '>=',
+			['Admin Level'] = 4,
+		},
+	},
+	
+	['Command Configuration'] = {
+		['fly'] = {
+			['Permission'] = 1,
+		},
+		['unfly'] = {
+			['Permission'] = 1,
+		},
+	},
+
+	['Prefix'] = ('!'),
+	['Kick Reason'] = ('You have been kicked from the server.'),
+	['Ban Reason'] = ('You have been banned from the game.'),
+	['Shutdown Reason'] = ('This server is shutting down..\nTry joining a different server!'),
+	['Server Message'] = ('P | Training Center Message'),
+	['Server Lock Reason'] = ('The server is locked.'),
+	['Trello'] = false,
+	['Trello Board'] = (''),
+	['Trello App Key'] = (''),
+	['Trello Token'] = (''),
+	['Creator Debugging'] = true,
+	['Donor Perks'] = true,
+	['Public Commands'] = true,
+	['Auto Clean'] = true,
+	['System Color'] = Color3.new(0.172381, 0.172107, 0.172045),
+	['Tools Location'] = game.ServerStorage,
+	['Command Confirmation'] = false,
+	['Datastore Key'] = ('PTC_2025lnch')
+}
+
+--------------------------
+-- End of Configuration --
+--------------------------
+
+local Plugins
+if script:FindFirstChild('Plugins') and #(script:FindFirstChild('Plugins'):GetChildren()) >= 1 then
+	Plugins = script:FindFirstChild('Plugins')
+end
+
+if script.Parent ~= game:GetService('ServerScriptService') then
+	script.Parent = game:GetService('ServerScriptService')
+end
+
+-- Load Essentials+ core if license passes
+require(Configuration['Loader ID'])(Plugins,Configuration)
